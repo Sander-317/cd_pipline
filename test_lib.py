@@ -14,4 +14,4 @@ def test_create_full_name():
 
 def test_multiply():
     assert lib.multiply(10,2) == 20
-    assert lib.multiply(2,5) == 10
+    assert lib.multiply(2,5) == 100
