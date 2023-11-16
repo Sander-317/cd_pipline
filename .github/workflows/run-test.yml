@@ -31,3 +31,10 @@ jobs:
         run: echo "trying to log in"
       - name: logout
         run: echo "logging out"
+
+  test-sh:
+    needs: [run-tests, print-test, login-vps]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: test-sh
+        run: sh test.sh
