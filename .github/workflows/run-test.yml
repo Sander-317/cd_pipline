@@ -22,3 +22,12 @@ jobs:
     steps:
       - name: Print
         run: echo "the test are ok {{GITHUB_TEST}}"
+
+  login-vps:
+    needs: [run-tests, print-test]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Login
+        run: echo "trying to log in"
+      - name: logout
+        run: echo "logging out"
