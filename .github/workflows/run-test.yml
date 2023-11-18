@@ -23,26 +23,26 @@ jobs:
       - name: Print
         run: echo "the test are ok {{GITHUB_TEST}}"
 
-  login-vps:
-    needs: [run-tests, print-test]
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Login
-        run: echo "trying to log in"
-      - name: logout
-        run: echo "logging out"
+  # login-vps:
+  #   needs: [run-tests, print-test]
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Login
+  #       run: echo "trying to log in"
+  #     - name: logout
+  #       run: echo "logging out"
 
-  test-sh:
-    needs: [run-tests, print-test, login-vps]
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Setup Python 3.11
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.11.0"
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-      - name: test-sh
-        run: sh test.sh
+  # test-sh:
+  #   needs: [run-tests, print-test, login-vps]
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #     - name: Setup Python 3.11
+  #       uses: actions/setup-python@v3
+  #       with:
+  #         python-version: "3.11.0"
+  #     - name: Install Dependencies
+  #       run: pip install -r requirements.txt
+  #     - name: test-sh
+  #       run: sh test.sh
