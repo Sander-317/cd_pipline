@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           host: ${{ secrets.HOST}}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: sh ${GITHUB_WORKSPACE}/test.sh
+          script: sh /home/cd_pipline/test.sh
 
   # test-sh:
   #   needs: [run-tests, print-test, login-vps]
