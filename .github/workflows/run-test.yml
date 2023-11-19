@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           host: ${{ secrets.HOST}}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: sh test.sh
+          script: sh ./test.sh
 
   # test-sh:
   #   needs: [run-tests, print-test, login-vps]
