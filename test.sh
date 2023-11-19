@@ -1,6 +1,5 @@
-echo "this is the .sh file"
-echo "ja het werkt echt"
-echo "ik weet het cker"
-rmdir /home/itworks
-rmdir /home/itworksagain
-echo "removed folders via .sh file in github actions yeey"
+cd /home/cd_pipline
+git pull origin main
+pip install -r requirements.txt
+pkill gunicorn
+gunicorn main:app --bind 0.0.0.0
