@@ -21,16 +21,19 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Print
-        run: echo "the test are ok {{GITHUB_TEST}}"
+        run: echo "the test are ok ${{secrets.TEST}}"
 
-  # login-vps:
-  #   needs: [run-tests, print-test]
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: Login
-  #       run: echo "trying to log in"
-  #     - name: logout
-  #       run: echo "logging out"
+  login-vps:
+    needs: [run-tests, print-test]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Deploy to <your domain>
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.VPS_USERNAME }}
+          host: ${{ secrets.HOST}}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: mkdir /home/itworks
 
   # test-sh:
   #   needs: [run-tests, print-test, login-vps]
