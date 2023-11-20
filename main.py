@@ -1,7 +1,5 @@
 # Import what we need from flask
 from flask import Flask
-import os
-import pyjokes
 import subprocess
 
 # Create a Flask app inside `app`
