@@ -11,7 +11,7 @@ def index():
 
 @app.route('/test')
 def cow():
-    return 'it still works'
+    return 'it still works test again'
 
 
 if __name__ == '__main__':
