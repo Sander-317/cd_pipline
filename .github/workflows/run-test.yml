@@ -16,11 +16,11 @@ jobs:
       - name: Run tests
         run: pytest
 
-  login-vps:
+  deploy-code:
     needs: [run-tests]
     runs-on: ubuntu-20.04
     steps:
-      - name: Deploy to <your domain>
+      - name: Deploy to vps
         uses: appleboy/ssh-action@master
         with:
           username: ${{ secrets.VPS_USERNAME }}
