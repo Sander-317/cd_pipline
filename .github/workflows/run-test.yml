@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests and deploy
 
 on: push
 jobs:
@@ -16,15 +16,8 @@ jobs:
       - name: Run tests
         run: pytest
 
-  print-test:
-    needs: run-tests
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Print
-        run: echo "the test are ok ${{secrets.TEST}}"
-
   login-vps:
-    needs: [run-tests, print-test]
+    needs: [run-tests]
     runs-on: ubuntu-20.04
     steps:
       - name: Deploy to <your domain>
@@ -33,19 +26,4 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           host: ${{ secrets.HOST}}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: sh /home/cd_pipline/test.sh
-
-  # test-sh:
-  #   needs: [run-tests, print-test, login-vps]
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v3
-  #     - name: Setup Python 3.11
-  #       uses: actions/setup-python@v3
-  #       with:
-  #         python-version: "3.11.0"
-  #     - name: Install Dependencies
-  #       run: pip install -r requirements.txt
-  #     - name: test-sh
-  #       run: sh test.sh
+          script: sh /home/cd_pipline/deploy.sh

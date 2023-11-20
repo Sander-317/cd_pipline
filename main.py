@@ -1,10 +1,5 @@
 # Import what we need from flask
 from flask import Flask
-import datetime
-
-# date = datetime.datetime.now()
-# print(date)
-# print(date.format('YYYY-MM-DD hh:mm:ss'))
 
 # Create a Flask app inside `app`
 app = Flask(__name__)
@@ -12,7 +7,7 @@ app = Flask(__name__)
 # Assign a function to be called when the path `/` is requested
 @app.route('/')
 def index():
-    return 'het werkt yeeeey '
+    return 'welcome to my flask app that gets deployed by github actions '
 
 @app.route('/cow')
 def cow():
