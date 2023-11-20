@@ -24,6 +24,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           username: ${{ secrets.VPS_USERNAME }}
+          port: ${{secrets.PORT}}
           host: ${{ secrets.HOST}}
           password: ${{ secrets.SSH_PASSWORD }}
           script: sh /home/cd_pipline/deploy.sh
