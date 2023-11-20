@@ -1,4 +1,4 @@
-import farm.functions_to_test as functions_to_test
+import functions_to_test as functions_to_test
 
 def test_power():
     assert functions_to_test.power(2,2) == 4
