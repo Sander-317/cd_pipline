@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Assign a function to be called when the path `/` is requested
 @app.route('/')
 def index():
-    return 'welcome to my flask app that gets deployed by github actions '
+    return '<h1>welcome to my flask app that gets deployed by github actions</h1> '
 
 @app.route('/test')
 def cow():
