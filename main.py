@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     result = subprocess.run(["pyjoke"], stdout=subprocess.PIPE)
-    return f'<h1>welcome to my flask app that gets deployed by github actions</h1> <img src="https://github.com/Sander-317/cd_pipline/actions/workflows/run-test.yml/badge.svg" alt="badge"> <div><h1>Joke<h1><br><h2>{result.stdout[:-2]}<h2></div>'
+    return f'<h1>welcome to my flask app that gets deployed by github actions</h1> <img src="https://github.com/Sander-317/cd_pipline/actions/workflows/run-test.yml/badge.svg" alt="badge"> <div><h1>Joke<h1><br><h2>{result.stdout.decode("utf-8")}<h2></div>'
 
 @app.route('/test')
 def cow():
