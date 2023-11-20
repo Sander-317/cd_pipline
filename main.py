@@ -9,9 +9,9 @@ app = Flask(__name__)
 def index():
     return 'welcome to my flask app that gets deployed by github actions '
 
-@app.route('/cow')
+@app.route('/test')
 def cow():
-    return 'MOoooOo!'
+    return 'it still works'
 
 
 if __name__ == '__main__':
