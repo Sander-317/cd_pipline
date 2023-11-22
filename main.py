@@ -23,7 +23,7 @@ def get_jokes(number):
 
     test = [f"{joke}" for joke in joke_list ]
     
-    return f'<ol><h1>{number} jokes list</h1>{[f"<li><h2>{joke[:-2]}</h2> </li> " for joke in joke_list ]}</ol>'
+    return f'<ol><h1>{number} jokes list</h1>{[f"<li><p>{joke[:-2]}</p> </li> " for joke in joke_list ]}</ol>'
     
 
 if __name__ == '__main__':
